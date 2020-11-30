@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Titulação de fios</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+      const kt = 1000.0;
+      const kde = 9000.0;
+      const kne = 0.59;
+      const knm = 1.0;
+
+      var peso;
+      var comp;
+
+      var sistema = parseInt (prompt("Qual o sistema de titulação? \n 1 - Sistema TEX \n 2 - Sistema Denier \n 3 - Sistema Ne \n 4 - Sistema Métrico"));
+
+      switch (sistema) {
+        case 1: 
+          peso = parseFloat (prompt("Peso do fio (g):"));
+          comp = parseFloat (prompt("Comprimento do fio (m):"));
+          titulo = (kt*peso)/comp;
+          alert ("T = " +titulo.toFixed(1)+ " TEX");
+
+          break;
+
+        case 2: 
+          peso = parseFloat (prompt("Peso do fio (g):"));
+          comp = parseFloat (prompt("Comprimento do fio (m):"));
+          titulo = (kde*peso)/comp;
+          alert ("T = " +titulo.toFixed(1)+ " Den");
+
+          break;
+
+        case 3: 
+          peso = parseFloat (prompt("Peso do fio (g):"));
+          comp = parseFloat (prompt("Comprimento do fio (m):"));
+          titulo = (kne*comp)/peso;
+          alert ("T = " +titulo.toFixed(1)+ " Ne");
+
+          break;
+
+        case 4: 
+          peso = parseFloat (prompt("Peso do fio (g):"));
+          comp = parseFloat (prompt("Comprimento do fio (m):"));
+          titulo = (knm*comp)/peso;
+          alert ("T = " +titulo.toFixed(2)+ " Nm");
+
+          break;
+      }
+  
+    </script>
+  </body>
+</html>
